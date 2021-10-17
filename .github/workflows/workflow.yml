@@ -1,4 +1,4 @@
-name: Test
+name: Workflow
 
 on:
   push:
@@ -8,8 +8,16 @@ on:
       - v*
 
 jobs:
-  docker:
+  test:
     runs-on: ubuntu-latest
 
     steps:
       - run: echo test
+  docker:
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo test32
+
+  
