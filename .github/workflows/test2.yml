@@ -6,8 +6,6 @@ on:
       - Test
     types:
       - completed
-    branches:
-      - master
     tags:
       - v*
 jobs:
