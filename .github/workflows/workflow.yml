@@ -18,6 +18,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: echo $GITHUB_EVENT_NAME
+      - run: echo "$GITHUB_EVENT_NAME"
 
   
