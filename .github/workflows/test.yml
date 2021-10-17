@@ -1,0 +1,13 @@
+name: Deploy Docker
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo test
