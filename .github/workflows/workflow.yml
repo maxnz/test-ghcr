@@ -16,6 +16,9 @@ jobs:
 
     steps:
       - run: echo test ${{ github.event_name }} ${{ github.ref }}
+      - run: ./test.bash
+        env:
+          TRIGGER: ${{ github.event_name }}
   docker:
     needs: test
     if: ${{ github.event_name == 'push' && startsWith(github.ref, 'refs/tags') }}
