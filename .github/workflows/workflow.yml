@@ -6,13 +6,16 @@ on:
       - master
     tags:
       - v*
+    release:
+      types:
+        - published
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
-      - run: echo test
+      - run: echo test ${{ github.event_name }} ${{ github.ref }}
   docker:
     needs: test
     if: ${{ github.event_name == 'push' && startsWith(github.ref, 'refs/tags') }}
